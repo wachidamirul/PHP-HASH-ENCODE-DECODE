@@ -8,7 +8,7 @@ switch($_POST['tipe']){
     case 'base58decode': echo base58decode($_POST['from']);break;
     case 'str2hex': echo str2hex($_POST['from']);break;
     case 'password_hash': echo password_hash($_POST['from'],PASSWORD_DEFAULT);break;
-    case 'crypt': echo crypt($_POST['from']);break;
+    case 'crypt': echo crypt($_POST['from'],'0x');break;
     default: echo hash( $_POST['tipe'] , $_POST['from'] );
 }
 
